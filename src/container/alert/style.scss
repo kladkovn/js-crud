@@ -1,0 +1,37 @@
+@use '../../lib/service.scss' as s;
+
+main {
+   padding: s.space(5);
+   width: 100%;
+   
+.alert__card{
+   padding: s.space(4);
+   border: 1px solid s.color('secondary');
+   border-radius: 6px;
+   width: 50%;
+
+}
+
+.card__body{
+   display: flex;
+   justify-content: space-between;
+   padding: s.space(4);
+   gap: s.space(2);
+}
+
+.alert__card--title{
+   font-size: 20px;
+   font-weight: 400;
+   color: s.color('primary');
+}
+
+.btn{
+   border: 1px solid s.color('primary');
+   border-radius: 6px;
+   gap: s.space(2);
+   color: s.color('light');
+   font-size: 16px;
+   padding: s.space(2);
+   background-color: s.color('primary');
+}
+}

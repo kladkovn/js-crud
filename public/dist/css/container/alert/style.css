@@ -1,0 +1,32 @@
+main {
+  padding: 20px;
+  width: 100%;
+}
+main .alert__card {
+  padding: 16px;
+  border: 1px solid rgb(151, 148, 148);
+  border-radius: 6px;
+  width: 50%;
+}
+main .card__body {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  gap: 8px;
+}
+main .alert__card--title {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(0, 17, 255);
+}
+main .btn {
+  border: 1px solid rgb(0, 17, 255);
+  border-radius: 6px;
+  gap: 8px;
+  color: #ddd;
+  font-size: 16px;
+  padding: 8px;
+  background-color: rgb(0, 17, 255);
+}
+
+/*# sourceMappingURL=style.css.map */

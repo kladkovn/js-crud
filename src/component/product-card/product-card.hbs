@@ -1,0 +1,14 @@
+{{#with list}}
+<div class="product-card">
+    {{#each product}}
+    <h2 class="product-card__title">{{name}}</h2>
+    <p class="product-card__description">{{description}}</p>
+    <span class="product-card__id">ID: {{id}}</span>
+    <div class="pricEdit__box">
+        <strong class="product-card__price">{{price}}</strong>
+        <a class="card__btn">Редагувати</a>
+   
+    </div>  
+     {{/each}}
+</div>
+{{/with}}

@@ -1,0 +1,79 @@
+main {
+  padding: 40px;
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+}
+main .product-edite {
+  padding: 40px;
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main .product-edite__title {
+  color: rgb(0, 17, 255);
+  font-size: 40px;
+}
+main .card {
+  border: 1px solid rgb(151, 148, 148);
+  border-radius: 10px;
+  padding: 32px;
+  gap: 16px;
+  width: auto;
+}
+main .edite__title-info {
+  font-size: 26px;
+  padding-bottom: 16px;
+}
+main .form__product-edite {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 16px;
+}
+main .name__price__desc {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+main .name__price__desc > div:last-of-type {
+  grid-column: 1/4;
+}
+main .form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+  padding-bottom: 16px;
+}
+main .form__label {
+  font-size: 16px;
+  font-weight: 500;
+}
+main .form__input {
+  border: solid 1px rgb(151, 148, 148);
+  border-radius: 6px;
+  width: auto;
+}
+main .btn-primary {
+  background-color: rgb(0, 17, 255);
+  border: 1px solid rgb(0, 17, 255);
+  border-radius: 4px;
+  color: #ddd;
+  padding: 8px;
+}
+main .btn-danger {
+  background-color: red;
+  border: 1px solid red;
+  border-radius: 4px;
+  color: #ddd;
+  padding: 8px;
+}
+main .btn-edite {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */

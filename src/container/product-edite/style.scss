@@ -5,44 +5,47 @@ main {
     gap: s.space(8);
     display: flex;
     flex-direction: column;
-    width: 100%;
+    
+    width: 1200px;
 
-.product-create{
+.product-edite{
     padding: s.space(10);
     gap: s.space(6);
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
-.product-create__title{
+.product-edite__title{
     color: s.color('primary'); 
     font-size: 40px;
 }
 .card{
     border: 1px solid s.color('secondary');
     border-radius: 10px;
-    padding: s.space(4);
+    padding: s.space(8);
     gap: s.space(4);
-    width: 50%;
+    width: auto;
+    
 }
-.title-info{
+.edite__title-info{
     font-size: 26px;
     padding-bottom: s.space(4);
 }
-.form__product{
+.form__product-edite{
     display: flex;
     flex-direction: column;
     padding-bottom: s.space(4);
 }
 .name__price__desc{
     display: grid;
-    grid-template-columns:repeat(2, 1fr);
+    grid-template-columns:repeat(3, 1fr);
     
-    width: 100%;
+   
     gap: s.space(4);
 }
 .name__price__desc > div:last-of-type{
-   grid-column: 1/3;
+   grid-column: 1/4;
 }
 .form__field{
     display: flex;
@@ -55,24 +58,16 @@ main {
     font-size: 16px;
     font-weight: 500;
 }
-.form__input--sm{
+.form__input{
     border: solid 1px s.color('secondary') ;
     border-radius: 6px;
     width: auto;
+    
    
-    height: 30px;
-}
-.form__input--lg{
-    border: solid 1px s.color('secondary') ;
-    border-radius: 6px;
-    width: 100%;
-    height: 60px;
-   
+    
 }
 
-}
-
-.product__button{
+.btn-primary{
     background-color: s.color('primary');
     border: 1px solid s.color('primary');
     border-radius: 4px;
@@ -80,4 +75,17 @@ main {
     padding: s.space(2);
 
     
+}
+.btn-danger{
+    background-color: s.color('danger');
+    border: 1px solid s.color('danger');
+    border-radius: 4px;
+    color: s.color('light');
+    padding: s.space(2);
+}
+.btn-edite{
+    display: flex;
+    justify-content: space-between;
+    gap: s.space(4);
+}
 }

@@ -1,0 +1,76 @@
+// @use '../../lib/service.scss' as s;
+
+// main {
+//     padding: s.space(10);
+//     gap: s.space(8);
+//     display: flex;
+//     flex-direction: column;
+//     width: 100%;
+
+// .product-create{
+//     padding: s.space(10);
+//     gap: s.space(6);
+//     display: flex;
+//     flex-direction: column;
+// }
+
+// .product-create__title{
+//     color: s.color('primary'); 
+//     font-size: 40px;
+// }
+// .card{
+//     border: 1px solid s.color('secondary');
+//     border-radius: 10px;
+//     padding: s.space(4);
+//     gap: s.space(4);
+//     width: 50%;
+// }
+// .title-info{
+//     font-size: 26px;
+//     padding-bottom: s.space(4);
+// }
+// .form__product{
+//     display: flex;
+//     flex-direction: column;
+//     padding-bottom: s.space(4);
+// }
+// .name__price{
+//     display: flex;
+//     justify-content: space-between;
+// }
+// .form__field{
+//     display: flex;
+//     flex-direction: column;
+//     gap: s.space(2);
+//     padding-top: s.space(2);
+//     padding-bottom: s.space(4);
+// }
+// .form__label{
+//     font-size: 16px;
+//     font-weight: 500;
+// }
+// .form__input--sm{
+//     border: solid 1px s.color('secondary') ;
+//     border-radius: 6px;
+//     width: 360px;
+//     height: 30px;
+// }
+// .form__input--lg{
+//     border: solid 1px s.color('secondary') ;
+//     border-radius: 6px;
+//     width: 100%;
+//     height: 60px;
+   
+// }
+
+// }
+
+// .product__button{
+//     background-color: s.color('primary');
+//     border: 1px solid s.color('primary');
+//     border-radius: 4px;
+//     color: s.color('light');
+//     padding: s.space(2);
+
+    
+// }

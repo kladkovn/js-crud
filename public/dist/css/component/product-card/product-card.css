@@ -1,0 +1,39 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(151, 148, 148);
+  border-radius: 4px;
+  box-shadow: 2px 4px 0px 0px;
+  gap: 8px;
+  padding: 16px;
+}
+
+.pricEdit__box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-list__title {
+  font-size: 18px;
+}
+
+.product-list__description {
+  font-size: 12px;
+}
+
+.product-list__id {
+  font-size: 14px;
+  color: rgb(151, 148, 148);
+}
+
+.product-list__price {
+  font-size: 14px;
+  color: black;
+}
+
+.card__btn {
+  color: rgb(0, 17, 255);
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=product-card.css.map */
