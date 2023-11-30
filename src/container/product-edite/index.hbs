@@ -7,34 +7,36 @@
         <h1 class="product-edite__title">Редагування товару </h1>
         <div class="card">
             <h2 class="edite__title-info">Інформація про товар</h2>
+            {{#with data}}
             <form action="/product-edite" method="POST">
                 <div class="form__product-edite">
                     <div class="name__price__desc">
                         <div class="form__field">
                             <label for="name" class="form__label">Назва товару</label>
-                            <input type="text" name="name" class="form__input">
+                            <input type="text" name="{{name}}" class="form__input">
                         </div>
                         <div class="form__field">
                             <label for="price" class="form__label">Вартість</label>
-                            <input type="text" name="price" class="form__input">
+                            <input type="text" name="{{price}}" class="form__input">
                         </div>
                          <div class="form__field">
                             <label for="id" class="form__label">ID</label>
-                            <input type="text" name="id" class="form__input">
+                            <input type="text" name="{{id}}" class="form__input">
                         </div>
                         <div class="form__field">
                             <label for="description" class="form__label">Короткий опис товару</label>
-                            <input type="text" name="description" class="form__input">
+                            <input type="text" name="{{description}}" class="form__input">
                         </div>
                     </div>
                     <div class="btn-edite">
-                        <button href="/product-edite?id=<ідентифікатор товару>" class="btn btn-primary">Зберігти оновлення</button>
-                        <button href=" /product-delete?id=<ідентифікатор товару>" class="btn btn-danger">Видалити товар</button>
+                        <button class="btn btn-primary">Зберігти оновлення</button>
+                        <a href=" /product-delete?id={{id}}" class="btn btn-danger">Видалити товар</a>
                     </div>
                     
                 </div>
             
             </form>
+            {{/with}}
         </div>
     </section>
     

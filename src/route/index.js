@@ -32,21 +32,26 @@ class Product {
 
   static updateById = (id, data) => {
     const product = this.getById(id)
+    const { name } = data;
     if (product) {
-      this.update({product, data})
+      if (name){
+        product.name = name
+      }
       return true
-    } return false
-  }
-
-  static update = (product, {name, price, description }) => {
-    if (product) {
-      product.name = name
-      product.price = price
-      product.description = description
-      
+    } else {
+      return false
     }
-
   }
+
+  // static update = (product, {name, price, description }) => {
+  //   if (product) {
+  //     product.name = name
+  //     product.price = price
+  //     product.description = description
+      
+  //   }
+
+  // }
 
   static deleteById = (id) => {(product) => product.id === id}
       
@@ -104,21 +109,44 @@ router.post('/product-create', function (req, res) {
 router.get('/product-edite', function (req, res) {
   const { id } = req.query
 
-  Product.updateById(Number(id))
+  const product = Product.getById(Number(id))
 
-  res.render('alert', {
-    style: 'alert',
-    info: 'Товар додано',
-    
-  })
+  if (product) {
+    return res.render('product-edite', {
+      style: 'product-edite',
+
+      data: {
+        name: product.name,
+        price: product.price,
+        id: product.id,
+        description: product.description,
+
+      },
+
+    })
+  } 
+  else {
+    return res.render('alert', {
+      style: 'alert',
+      info: 'Продукту за таким ID не знайдено',
+      
+    })
+  }
+  
+
   
 })
 
 router.post('/product-edite', function (req, res) {
   const { name, price, id, description } = req.body
 
-  Product.update( name, price, id, description )
-  const product = new Product(name, price, id, description)
+  
+  const product = Product.updateById(Number(id), {
+    name,
+    price,
+    description,
+  })
+
   
   Product.add(product)
 
@@ -141,11 +169,18 @@ router.get('/product-delete', function (req, res) {
   
 })
 router.get('/product-list', function (req, res) {
- const {list} = req.query
-  Product.getList()
+ const list = Product.getList()
+  
+//  Product.add(product)
 
   res.render('product-list', {
     style: 'product-list',
+    data: {
+      products: {
+        list,
+        isEmpty: list.length === 0,
+      },
+    },
     
   })
   
