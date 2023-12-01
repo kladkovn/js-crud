@@ -7,7 +7,7 @@ const router = express.Router()
 
 
 class Product {
-  
+
 
   constructor( name, price, description){
     this.name = name
@@ -26,9 +26,9 @@ class Product {
     this.#list.push(product)
   }
 
-  static getById = (id) => {
+  static getById = (id) => 
     this.#list.find((product) => product.id === id)
-  }
+  
 
   static updateById = (id, data) => {
     const product = this.getById(id)
@@ -81,8 +81,7 @@ router.get('/', function (req, res) {
 })
 
 router.get('/product-create', function (req, res) {
-  
-  
+   
   res.render('product-create', {
     
     style: 'product-create',
@@ -104,7 +103,6 @@ router.post('/product-create', function (req, res) {
     info: 'Товар додано',
     
   })
-  // ↑↑ сюди вводимо JSON дані
 })
 router.get('/product-edite', function (req, res) {
   const { id } = req.query
@@ -120,34 +118,26 @@ router.get('/product-edite', function (req, res) {
         price: product.price,
         id: product.id,
         description: product.description,
-
       },
 
     })
-  } 
-  else {
+  } else {
     return res.render('alert', {
       style: 'alert',
       info: 'Продукту за таким ID не знайдено',
       
     })
   }
-  
-
-  
+   
 })
 
 router.post('/product-edite', function (req, res) {
   const { name, price, id, description } = req.body
-
-  
   const product = Product.updateById(Number(id), {
     name,
     price,
     description,
   })
-
-  
   Product.add(product)
 
   console.log(Product.getList())
