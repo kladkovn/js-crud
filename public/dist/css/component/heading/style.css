@@ -1,0 +1,19 @@
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.heading__title {
+  font-size: 24px;
+  color: rgb(14, 2, 2);
+  padding: 8px;
+}
+
+.heading__info {
+  font-size: 16px;
+  color: rgb(14, 2, 2);
+  padding: 8px;
+}
+
+/*# sourceMappingURL=style.css.map */

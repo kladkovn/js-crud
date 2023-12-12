@@ -1,0 +1,46 @@
+main {
+  max-width: 1920px;
+  padding: 100px;
+  justify-content: center;
+}
+
+.purchase-alert {
+  max-width: 1000px;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid rgb(97, 141, 221);
+  border-radius: 12px;
+}
+
+.message-alert {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.message {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.info {
+  font-size: 12px;
+}
+
+.btn-primary {
+  background-color: rgb(0, 17, 255);
+  color: #ddd;
+  border: 1px solid rgb(0, 17, 255);
+  border-radius: 4px;
+  padding: 8px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,21 @@
+
+@use '../../lib/service.scss' as s;
+
+@use '../../component/heading/style.scss' as heading;
+@use '../../component/field/style.scss' as field;
+
+.main{
+    border: 2px solid s.color('alert-border');
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.purchase-list{
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 2px solid s.color('alert-border');
+}

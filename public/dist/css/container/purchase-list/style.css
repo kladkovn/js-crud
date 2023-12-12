@@ -1,0 +1,57 @@
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.heading__title {
+  font-size: 24px;
+  color: rgb(14, 2, 2);
+  padding: 8px;
+}
+
+.heading__info {
+  font-size: 16px;
+  color: rgb(14, 2, 2);
+  padding: 8px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding-bottom: 12px;
+}
+
+.field__label {
+  font-size: 14px;
+}
+
+.field__input {
+  border: 1px solid rgb(97, 141, 221);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.field--disabled {
+  position: absolute;
+  display: none;
+}
+
+.main {
+  border: 2px solid rgb(97, 141, 221);
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.purchase-list {
+  width: 800px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 2px solid rgb(97, 141, 221);
+}
+
+/*# sourceMappingURL=style.css.map */
