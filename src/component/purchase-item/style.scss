@@ -1,0 +1,15 @@
+@use '../../lib/service.scss' as s;
+@use '../../component/divider/style.scss' as divider;
+@use '../../component/field/style.scss' as field;
+
+.purchase-item{
+   width: 100%;
+   display: grid;
+   padding: s.space(3);
+   grid-template-columns: 1fr 2fr 2fr 2fr;
+   gap: s.space(2);
+   &:hover{
+      border: 1px solid s.color('secondary');
+      border-radius: s.space(2);
+   }
+}

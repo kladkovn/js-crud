@@ -501,55 +501,66 @@ router.post('/purchase-submit', function (req, res) {
   // ↑↑ сюди вводимо JSON дані
 })
 router.get('/purchase-list', function (req, res) {
-  
+  // console.log(bonus)
+
+  const list = Purchase.getList()
+  const product = Product.getList()
+  // console.log('purchase-list:', list)
    
   // ↙️ cюди вводимо назву файлу з сontainer
   res.render('purchase-list', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
     style: 'purchase-list',
-
-    // data: {
+    component:['heading','purchase-item','divider'],
+   
+    data: {
       
-    //   list: Purchase.getList(id, totalPrice, bonus),
-    //   product: Product.getlist(title),
+      purchases: {
+        list,
+        
+      },
+      product,
       
-    // },
+    },
     
   })
   // ↑↑ сюди вводимо JSON дані
 })
 router.get('/purchase-info', function (req, res) {
   
-   
+   const list = Purchase.getList()
+   const product = Product.getList()
   // ↙️ cюди вводимо назву файлу з сontainer
   res.render('purchase-info', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
     style: 'purchase-info',
 
-    // data: {
-    //   id: randomID,
-    //   list: Purchase.getList(),
+    data: {
       
-
-    // },
-    
+      purchases: {
+        list,
+        
+      },
+      product,
+      
+    },
   })
   // ↑↑ сюди вводимо JSON дані
 })
 router.get('/purchase-change', function (req, res) {
   
-   
+   const list = Purchase.getList()
   // ↙️ cюди вводимо назву файлу з сontainer
   res.render('purchase-change', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
     style: 'purchase-change',
 
-    // data: {
-    //   id: randomID,
-    //   list: Purchase.getList(),
+    data: {
+     
+      list,
       
 
-    // },
+    },
     
   })
   // ↑↑ сюди вводимо JSON дані

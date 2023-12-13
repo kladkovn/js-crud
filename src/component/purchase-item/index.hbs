@@ -1,0 +1,27 @@
+ {{!-- <div class="purchase-list">
+    
+    {{> field label="ID" name="{{id}}"}}
+    {{> field label="Товар" name="{{title}}"}}
+    {{> field label="Сума замовлення" name="{{totalPrice}}"}}
+    {{> field label="Сума бонусів" name="{{bonus}}"}}
+    
+</div> --}}
+<a href='/purchase-info?id={{id}}'>
+  <div class='purchase-item'>
+    <div class='purchase-item__block'>
+      <span class='title'>ID: {{id}}</span>
+    </div>
+    <div class='purchase-item__block'>
+      <span class='title'>Товари: </span>
+      <span class='text'>{{product.title}}</span>
+    </div>
+    <div class='purchase-item__block'>
+      <span class='title'>Сума замовлення: </span>
+      <span class='text'>{{totalPrice}} грн</span>
+    </div>
+    <div class='purchase-item__block'>
+      <span class='title'>Нараховані бонуси: </span>
+      <span class='text'>{{bonus}} грн</span>
+    </div>
+  </div>
+</a>

@@ -3,8 +3,11 @@
 
 @use '../../component/heading/style.scss' as heading;
 @use '../../component/field/style.scss' as field;
+@use '../../component/purchase-item/style.scss' as purchase-item;
 
-.main{
+
+
+main{
    padding: s.space(10) s.space(20);
     width: 1000px;
     display: flex;
@@ -16,9 +19,3 @@
     padding-bottom: s.space(5);
 }
 
-.purchase-list{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: s.space(3);
-}
