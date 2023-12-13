@@ -233,21 +233,12 @@ router.get('/purchase-index', function (req, res) {
   // ↙️ cюди вводимо назву файлу з сontainer
   res.render('purchase-index', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
-    style: 'purchase-index ',
+    style: 'purchase-index',
 
     data: {
       list: Product.getList(),
     },
-    // data: {
-    //   img: 'https://picsum.photos/200/300',
-    //   title: `Computer AtrMaster FD 125/5487 AMD Decleron`,
-    //   description: `AMD Decleron 655 HDD 3600 HHz/ RAV 256/ HDD 1 Tb`,
-    //   category: [
-    //     {id: 1, text: 'Ready to go'},
-    //     {id: 2, text: 'Top sales'},
-    //   ],
-    //   price: 27560,
-    // }
+   
   })
   // ↑↑ сюди вводимо JSON дані
 })
@@ -510,16 +501,55 @@ router.post('/purchase-submit', function (req, res) {
   // ↑↑ сюди вводимо JSON дані
 })
 router.get('/purchase-list', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
+  
+   
   // ↙️ cюди вводимо назву файлу з сontainer
   res.render('purchase-list', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
-    style: 'purchase-list ',
+    style: 'purchase-list',
 
-    data: {
-      list: Purchase.getList(),
-    },
+    // data: {
+      
+    //   list: Purchase.getList(id, totalPrice, bonus),
+    //   product: Product.getlist(title),
+      
+    // },
+    
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
+router.get('/purchase-info', function (req, res) {
+  
+   
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('purchase-info', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+    style: 'purchase-info',
+
+    // data: {
+    //   id: randomID,
+    //   list: Purchase.getList(),
+      
+
+    // },
+    
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
+router.get('/purchase-change', function (req, res) {
+  
+   
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('purchase-change', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+    style: 'purchase-change',
+
+    // data: {
+    //   id: randomID,
+    //   list: Purchase.getList(),
+      
+
+    // },
     
   })
   // ↑↑ сюди вводимо JSON дані

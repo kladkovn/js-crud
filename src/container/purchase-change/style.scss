@@ -3,6 +3,8 @@
 
 @use '../../component/heading/style.scss' as heading;
 @use '../../component/field/style.scss' as field;
+@use '../../component/divider/style.scss' as divider;
+@use '../../component/button/style.scss' as button;
 
 .main{
    padding: s.space(10) s.space(20);
@@ -11,14 +13,23 @@
     flex-direction: column;
     justify-content: center;
     gap: s.space(5);
+    
 }
 .title{
     padding-bottom: s.space(5);
+    
 }
 
-.purchase-list{
+.user-info{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:1fr 1fr;
+    gap: s.space(3);
+}
+
+.price-info{
+    width: 100%;
+    display: grid;
+    grid-template-columns:1fr 1fr;
     gap: s.space(3);
 }

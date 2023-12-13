@@ -1,7 +1,7 @@
 .button {
   background-color: rgb(0, 17, 255);
   color: #ddd;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 12px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -20,13 +20,13 @@
 .heading__title {
   font-size: 24px;
   color: rgb(14, 2, 2);
-  padding: 8px;
+  padding: 16px;
 }
 
 .heading__info {
   font-size: 16px;
   color: rgb(14, 2, 2);
-  padding: 8px;
+  padding: 16px;
 }
 
 .product-card {

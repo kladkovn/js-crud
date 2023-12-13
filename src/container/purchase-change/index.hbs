@@ -1,0 +1,24 @@
+<main>
+    <section class="main">
+
+        <div class="title">
+            {{> heading title="Зміна даних"}}
+        </div>
+        <div class="purchase-info">
+            {{> field label="ID:" name="id"}}
+        </div>
+        <div class="user-info">
+           
+            {{> field label="Ім'я:" name="firstname"}}
+            {{> field label="Прізвище:" name="lastname"}}
+            {{> field label="Телефон:" name="phone"}}
+            {{> field label="Пошта:" name="email"}}
+            
+        </div>
+        {{> divider}}
+        
+
+        {{> button text="Зберігти зміни"}}
+    </section>
+    
+</main>

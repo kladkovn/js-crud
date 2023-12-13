@@ -1,16 +1,19 @@
 <main>
     <section class="main">
-
+         {{!-- {{#with data}} --}}
         <div class="title">
             {{> heading title="Мої замовлення"}}
         </div>
-    
+       
         <div class="purchase-list">
+           
             {{> field label="ID" name="id"}}
             {{> field label="Товар" name="title"}}
             {{> field label="Сума замовлення" name="totalPrice"}}
-            {{> field label="Сума бонусів" name="bonusAmount"}}
+            {{> field label="Сума бонусів" name="bonus"}}
+            
         </div>
+        {{!-- {{/with}} --}}
     </section>
     
 </main>
