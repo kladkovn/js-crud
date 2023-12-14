@@ -222,7 +222,7 @@ router.get('/', function (req, res) {
     data: {
       message: 'Успішне виконання дії',
       info: 'Замовлення успішно створено',
-      link: '/test-path',
+      link: `/purchase-index`,
     },
   })
   // ↑↑ сюди вводимо JSON дані

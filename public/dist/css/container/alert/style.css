@@ -41,6 +41,7 @@ main {
   border: 1px solid rgb(0, 17, 255);
   border-radius: 4px;
   padding: 8px;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */
