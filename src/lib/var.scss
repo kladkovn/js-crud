@@ -1,0 +1,15 @@
+$colorMap: (
+    light: #f5f3f3,
+    primary: rgb(0, 17, 255),
+    secondary: rgb(151, 148, 148),
+    danger: red,
+    border: rgb(97, 141, 221),
+    text: rgb(14, 2, 2),
+    background: rgb(120, 219, 219),
+    button: #20D562,
+    search: rgb(135, 208, 236),
+);
+
+@function color ($key){
+    @return map-get($colorMap, $key);
+};
