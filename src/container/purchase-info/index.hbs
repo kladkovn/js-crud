@@ -1,11 +1,12 @@
-<main>
+
+ <main>
     <section class="main">
-        {{!-- <form action="/purchase-change" method="post"> --}}
+        
         <div class="title">
             {{> heading title="Інформація про замовлення"}}
         </div>
-        {{#with data.purchases}}
-        {{#each list}}
+        {{!-- {{#with data}} 
+        {{#each list}} --}}
         <div class="purchase-info">
             {{> field label="ID:" name="{{id}}"}}
         </div>
@@ -27,12 +28,14 @@
             {{> field label="Сума до сплати:" name="{{totalPrice}}"}}
             {{> field label="Нараховані бонуси:" name="{{bonus}}"}}
         </div>
-        {{/each}}
-        {{/with}}
+        {{!-- {{/each}}
+        {{/with}} --}}
         {{> divider}}
 
-        {{> button text="Змінити дані"}}
-        {{!-- </form> --}}
-    </section>
+        <a href='/purchase-edit?id={{id}}'>
+            {{> button text="Змінити дані"}}
+        </a>
+        
+    </section> 
     
-</main>
+ </main>
