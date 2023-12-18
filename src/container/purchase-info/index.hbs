@@ -1,41 +1,76 @@
+<main class='main'>
+    <section class="purchase-info">
+        <div class='form'>
+          {{> heading}}
 
- <main>
-    <section class="main">
-        
-        <div class="title">
-            {{> heading title="Інформація про замовлення"}}
-        </div>
-        {{!-- {{#with data}} 
-        {{#each list}} --}}
-        <div class="purchase-info">
-            {{> field label="ID:" name="{{id}}"}}
-        </div>
-        <div class="user-info">
-           
-            {{> field label="Ім'я:" name="{{firstname}}"}}
-            {{> field label="Прізвище:" name="{{lastname}}"}}
-            {{> field label="Телефон:" name="{{phone}}"}}
-            {{> field label="Пошта:" name="{{email}}"}}
+          {{#with data}}
+            <div class="purchase-item">
+              <div class='purchase-item__block'>
+                <span class='title'>ID:</span>
+                <span class='text'>{{id}}</span>
+              </div>
+            </div>
             
-        </div>
-        {{> divider}}
-        {{> field label="Назва товару:" name="{{product.title}}"}}
-        {{> field label="Коментар:" name="{{comment}}"}}
+            {{> divider}}
+            <div class='purchase-item'>
+                <div class="purchase-item__block">
+                  <span class='title'>Ім'я:</span>
+                  <span class='text'>{{firstname}}</span>
+                </div>
+                <div class='purchase-item__block'>
+                  <span class='title'>Прізвище:</span>
+                  <span class='text'>{{lastname}}</span>
+                </div>
+            
+                <div class="purchase-item__block">
+                  <span class='title'>Телефон:</span>
+                  <span class='text'>{{phone}}</span>
+                </div>
+                <div class='purchase-item__block'>
+                  <span class='title'>Електронна пошта:</span>
+                  <span class='text'>{{email}}</span>
+                </div>
+            </div>
+            {{> divider}}
+            
 
-        <div class="price-info">
-            {{> field label="Вартість товарів:" name="{{productPrice}}"}}
-            {{> field label="Вартість доставки:" name="{{deliveryPrice}}"}}
-            {{> field label="Сума до сплати:" name="{{totalPrice}}"}}
-            {{> field label="Нараховані бонуси:" name="{{bonus}}"}}
-        </div>
-        {{!-- {{/each}}
-        {{/with}} --}}
-        {{> divider}}
+            <div class='purchase-item'>
+                <div class='purchase-item__block'>
+                    <span class='title'>Адреса доставки:</span>
+                    <span class='text'>{{delivery}}</span>
+                </div>
+                <div class='purchase-item__block'>
+                    <span class='title'>Назва товару:</span>
+                    <span class='text'>{{product}}</span>
+                </div>
+            </div>
+              {{> divider}}
 
+            <div class='purchase-item'>
+                <div class="purchase-item__block">
+                  <span class='title'>Вартість товарів:</span>
+                  <span class='text'>{{productPrice}} грн</span>
+                </div>
+                <div class='purchase-item__block'>
+                  <span class='title'>Вартість доставки:</span>
+                  <span class='text'>{{deliveryPrice}} грн</span>
+                </div>
+            
+                <div class="purchase-item__block">
+                  <span class='title'>Сума до сплати:</span>
+                  <span class='text'>{{totalPrice}} грн</span>
+                </div>
+            <div class='purchase-item__block'>
+                  <span class='title'>Нараховані бонуси:</span>
+                  <span class='text'>{{bonus}} грн</span>
+                </div>
+            </div>
+            {{> divider}}
+          
         <a href='/purchase-edit?id={{id}}'>
             {{> button text="Змінити дані"}}
         </a>
-        
-    </section> 
-    
- </main>
+        {{/with}}
+        </div>
+    </section>
+</main>
