@@ -1,4 +1,5 @@
 <main class="main">
+    
     {{#with data}}
     <div class="main__content">
        <h1 class="title title--center">{{name}}</h1>
@@ -15,9 +16,17 @@
                     <strong class="track__name">{{name}}</strong>
                     <em class="track__author">{{author}}</em>
                 </div>
-                <a href="/spotify-track-add?playlistId={{../playlistId}}&trackId={{id}}">
+                {{!-- <a href="/spotify-track-add?playlistId={{../playlistId}}&trackId={{id}}">
                     <img src="/dist/svg/add_butt.svg">
-                </a>
+                </a> --}}
+
+                <form action="/spotify-track-add" method="post">
+                    <input type="hidden" name="playlistId" value="{{../playlistId}}">
+                    <input type="hidden" name="trackId" value="{{id}}">
+                    <button type="submit">
+                        <img src="/" alt="icon" class="track__icon">
+                    </button>
+                </form>
             </li>
             {{/each}}
         </ul>
