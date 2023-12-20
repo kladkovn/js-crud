@@ -50,7 +50,7 @@ Track.create(
   'Ann Lenox',
   'https://picsum.photos/100/100'
 )
-console.log(Track.getList())
+// console.log(Track.getList())
 
 class PlayList {
   static #list = []
@@ -95,7 +95,10 @@ class PlayList {
       (track) => track.id !== trackId,
     )
   }
-  
+  addTrack(track){
+    PlayList.tracks.push(track)
+    return this.tracks.reverse()
+  }
 
   static findListByValue(name){
     return this.#list.filter((playlist)=>
@@ -129,14 +132,14 @@ router.get('/spotify-playlist', function (req, res) {
   const id = Number(req.query.id)
 
   const playlist = PlayList.getById(id)
-
+  
   if (!playlist) {
     return res.render('alert', {
       style: 'alert',
       data: {
         message: 'Помилка',
         info: 'Такого плейлиста не знайдено',
-        link: `/spotify-playlist?id=${playlistId}`,
+        link: `/spotify-playlist?id=${playlist.Id}`,
       },
     })
   }
@@ -169,7 +172,7 @@ router.get('/spotify-create', function (req, res) {
   // ↑↑ сюди вводимо JSON дані
 })
 router.post('/spotify-create', function (req, res) {
-  
+ 
   const isMix = !!req.query.isMix
   console.log(isMix)
   const name = req.body.name
@@ -181,12 +184,12 @@ router.post('/spotify-create', function (req, res) {
         message: 'Помилка',
         info: 'Введіть назву плейлиста',
         link: isMix
-        ?'/spotify-create?isMix=true'
-        :'/spotify-create',
+        ? `/spotify-create?isMix=true`
+        : `/spotify-create`,
       },
     })
   }
-
+ 
   const playlist = PlayList.create(name)
 
   if (isMix) {
@@ -194,7 +197,6 @@ router.post('/spotify-create', function (req, res) {
   }
   console.log(playlist)
 
-  // ↙️ cюди вводимо назву файлу з сontainer
   res.render('spotify-playlist', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
     style: 'spotify-playlist',
@@ -205,6 +207,8 @@ router.post('/spotify-create', function (req, res) {
       name: playlist.name,
     },
   })
+  // ↙️ cюди вводимо назву файлу з сontainer
+ 
   // ↑↑ сюди вводимо JSON дані
 })
 router.get('/spotify-track-delete', function (req, res) {
@@ -242,19 +246,40 @@ router.get('/spotify-track-add', function (req, res) {
   const playlistId = Number(req.query.playlistId)
   const trackId = Number(req.query.trackId)
 
-  const playlist = PlayList.getById(playlistId)
-  // if (!playlist) {
-  //   return res.render('alert', {
-  //     style: 'alert',
-  //     data: {
-  //       message: 'Помилка',
-  //       info: 'Такого плейлиста не знайдено',
-  //       link: `/spotify-playlist?id=${playlistId}`,
-  //     },
-  //   })
-  // }
+  const playlist = addTrack(trackId)
+  if (!playlist) {
+    return res.render('alert', {
+      style: 'alert',
+      data: {
+        message: 'Помилка',
+        info: 'Такого плейлиста не знайдено',
+        link: `/spotify-playlist?id=${playlistId}`,
+      },
+    })
+  }
 
-  // playlist.deleteTrackById(trackId)
+  
+
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('spotify-playlist', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+    style: 'spotify-playlist',
+
+    data: {
+      playlistId: playlist.id,
+      tracks: playlist.tracks,
+      name: playlist.name,
+    },
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
+router.get('/spotify-playlist-add', function (req, res) {
+  const playlistId = Number(req.query.playlistId)
+  const trackId = Number(req.query.trackId)
+
+  const playlist = PlayList.getById(playlistId)
+ 
+  
 
   // ↙️ cюди вводимо назву файлу з сontainer
   res.render('spotify-playlist-add', {
